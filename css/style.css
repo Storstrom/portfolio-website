@@ -11,6 +11,28 @@ main {
   padding-top: 84px;
 }
 
+/**
+ * Fix fonts that render as bold in Firefox
+ *
+ * Put this near the top of your style.css
+ * Before any overriding styles
+ */
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+/**
+ * Firefox specific rule
+ */
+@-moz-document url-prefix() {
+  body {
+    font-weight: lighter !important;
+  }
+}
+
 header {
   padding: 10px 0;
   width: 100%;
@@ -32,6 +54,9 @@ body {
   /* Sets the line-height to 1.6 * the font-size */
   color: #4a4a4a;
 }
+
+
+
 
 footer {
   padding: 10px 0;
@@ -237,7 +262,19 @@ h4 {
   text-decoration: none;
 }
 
+.button.contact {
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  border: 2px solid #804A85;
+  margin: 40px 0 10px;
+  padding: 10px 40px;
+}
 
+.button.contact:hover,
+.button.contact:active {
+  background-color: #A05AA5;
+  color: #ffffff !important;
+}
 
 .container {
   max-width: 1200px;
